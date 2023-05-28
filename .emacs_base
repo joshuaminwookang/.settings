@@ -1,0 +1,10 @@
+(require 'package)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+			 ("melpa" . "http://melpa.org/packages/")))
+
+;; load packages
+;; buffer local variables
+(setq-default
+ indent-tabs-mode nil
+ tab-width 2
+ c-basic-offset 2)
