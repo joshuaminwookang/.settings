@@ -1,7 +1,5 @@
 # ~/.bashrc            
 
-# RECOVERY $PATH
-# export PATH=/rscratch/jmk/miniconda3/envs/testing/bin:/rscratch/jmk/vivado/Vitis_HLS/2021.1/bin:/rscratch/jmk/vivado/Model_Composer/2021.1/bin:/rscratch/jmk/vivado/DocNav:/rscratch/jmk/xilinx/Vivado/2021.1/bin:/rscratch/jmk/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/bin:/rscratch/jmk/local/bin:/rscratch/jmk/rscratch/jmk/gurobi951/linux64/bin
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -20,25 +18,6 @@ case $- in
     *) return;;
 esac
 
-# Compilation flags
-export ARCHFLAGS="-arch x86_64"
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 source ~/.bash_aliases
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/rscratch/jmk/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/rscratch/jmk/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/rscratch/jmk/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/rscratch/jmk/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
